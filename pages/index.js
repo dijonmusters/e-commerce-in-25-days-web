@@ -105,6 +105,8 @@ const Keyword = styled.span`
 
   ${sm`
     text-align: center;
+    flex: 1;
+    justify-content: center;
   `};
 `;
 
