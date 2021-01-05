@@ -32,6 +32,15 @@ const Head = () => {
         name="twitter:image:alt"
         content="Santa Claus drinking whisky and smoking cigar"
       />
+      <title>
+        🚀 Build an E-commerce platform in 25 days using Next.js, Netlify and
+        Stripe!
+      </title>
+      <meta
+        name="description"
+        content="This is a free 25 video course on building an e-commerce platform or online store with Next.js, Netlify and Stripe! Over the course of 25 days (or 1 if you want to binge it!) we will incrementally create a statically generated Jamstack site to sell your goods, that is 100% free to host!"
+      />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
     </NextHead>
   );
 };

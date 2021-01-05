@@ -49,8 +49,9 @@ const Content = styled.div`
   `};
 `;
 
-const Title = styled.h1`
+const Title = styled.h2`
   margin-bottom: 0.5rem;
+  font-size: 2rem;
 
   ${sm`
     font-size: 1.5rem;
