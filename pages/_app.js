@@ -1,7 +1,7 @@
-import Head from "next/head";
 import styled from "styled-components";
 import { Normalize } from "styled-normalize";
 import Navbar from "../components/Navbar";
+import Head from "../components/Head";
 
 const Container = styled.div`
   background: linear-gradient(to right, #fc00ff, #00dbde);
@@ -19,13 +19,7 @@ const Page = styled.div`
 const MyApp = ({ Component, pageProps }) => {
   return (
     <>
-      <Head>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+      <Head />
       <Container>
         <Normalize />
         <Navbar />

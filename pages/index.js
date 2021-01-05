@@ -1,10 +1,9 @@
 import { useEffect } from "react";
-import Head from "next/head";
 import Link from "next/link";
 import fs from "fs";
 import matter from "gray-matter";
 import styled from "styled-components";
-import Player from "react-player";
+import Player from "react-player/lazy";
 import marked from "marked";
 import throttle from "lodash/throttle";
 import { sm } from "../utils/mediaQueries";
@@ -128,49 +127,26 @@ const keywordColours = [
 const renderLesson = ({ content, title, videoUrl, keywords }, i) => {
   const html = marked(content);
   return (
-    <>
-      <Head>
-        <meta property="og:title" content="E-commerce in 25 days" />
-        <meta
-          property="og:description"
-          content="Build an e-commerce platform in 25 days using Next.js, Netlify and Stripe"
-        />
-        <meta
-          property="og:image"
-          content="https://e-commerce-in-25-days.netlify.app/medium.png"
-        />
-        <meta
-          property="og:url"
-          content="https://e-commerce-in-25-days.netlify.app/"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="og:site_name" content="E-commerce in 25 days" />
-        <meta
-          name="twitter:image:alt"
-          content="Santa Claus drinking whisky and smoking cigar"
-        />
-      </Head>
-      <Lesson key={title} id={i + 1}>
-        <VideoContainer>
-          <VideoPlayer width="100%" height="100%" url={videoUrl} />
-        </VideoContainer>
-        <Content>
-          <Title>
-            <Day>🎄Day {i + 1}</Day>
-            <Colon>: </Colon>
-            <Subtitle>{title}</Subtitle>
-          </Title>
-          <KeywordContainer>
-            {keywords.map((keyword, i) => (
-              <Keyword key={keyword} background={keywordColours[i]}>
-                {keyword}
-              </Keyword>
-            ))}
-          </KeywordContainer>
-          <Description dangerouslySetInnerHTML={{ __html: html }} />
-        </Content>
-      </Lesson>
-    </>
+    <Lesson key={title} id={i + 1}>
+      <VideoContainer>
+        <VideoPlayer width="100%" height="100%" url={videoUrl} />
+      </VideoContainer>
+      <Content>
+        <Title>
+          <Day>🎄Day {i + 1}</Day>
+          <Colon>: </Colon>
+          <Subtitle>{title}</Subtitle>
+        </Title>
+        <KeywordContainer>
+          {keywords.map((keyword, i) => (
+            <Keyword key={keyword} background={keywordColours[i]}>
+              {keyword}
+            </Keyword>
+          ))}
+        </KeywordContainer>
+        <Description dangerouslySetInnerHTML={{ __html: html }} />
+      </Content>
+    </Lesson>
   );
 };
 
@@ -188,9 +164,6 @@ const HomePage = ({ lessons }) => {
     window.addEventListener("scroll", handleScroll);
   }, []);
   return <Container>{lessons.map(renderLesson)}</Container>;
-  // TODO! Fix heading PHat heading
-  // TODO! Add favicon
-  // TODO! write markdowns
 };
 
 export const getStaticProps = async () => {
