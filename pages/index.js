@@ -130,7 +130,12 @@ const renderLesson = ({ content, title, videoUrl, keywords }, i) => {
   return (
     <Lesson key={title} id={i + 1}>
       <VideoContainer>
-        <VideoPlayer width="100%" height="100%" url={videoUrl} />
+        <VideoPlayer
+          width="100%"
+          height="100%"
+          url={videoUrl}
+          controls={true}
+        />
       </VideoContainer>
       <Content>
         <Title>
