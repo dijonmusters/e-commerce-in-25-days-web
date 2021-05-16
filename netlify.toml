@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/"
+  to = "https://jonmeyers.io/courses/build-an-e-commerce-platform-in-25-days-using-next-js-netlify-and-stripe"
+  status = 301
