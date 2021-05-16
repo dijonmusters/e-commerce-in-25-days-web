@@ -41,6 +41,10 @@ const Head = () => {
         content="This is a free 25 video course on building an e-commerce platform or online store with Next.js, Netlify and Stripe! Over the course of 25 days (or 1 if you want to binge it!) we will incrementally create a statically generated Jamstack site to sell your goods, that is 100% free to host!"
       />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link
+        rel="canonical"
+        href="https://jonmeyers.io/courses/build-an-e-commerce-platform-in-25-days-using-next-js-netlify-and-stripe"
+      />
     </NextHead>
   );
 };
